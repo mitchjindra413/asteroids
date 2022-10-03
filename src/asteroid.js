@@ -7,11 +7,14 @@ const DEFAULTS = {
 }
 
 function Asteroid(obj) {
-  // this.obj = obj;
-  this.color = DEFAULTS.COLOR;
-  this.radius = DEFAULTS.RADIUS;
-  this.pos = obj.pos;
-  MovingObject.call(this, obj);  
+  let ast = {};
+  ast.color = DEFAULTS.COLOR;
+  ast.radius = DEFAULTS.RADIUS;
+  ast.pos = obj.pos;
+  ast.vel = Util.randomVec(20);
+  MovingObject.call(this, ast);  
 }
 
 Util.inherits(Asteroid, MovingObject);
+
+module.exports = Asteroid;
