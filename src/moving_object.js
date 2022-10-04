@@ -13,7 +13,8 @@ function MovingObject(obj) {
   }
 
   MovingObject.prototype.move = function() {
-    this.pos += this.vel;
+    this.pos[0] += this.vel[0]
+    this.pos[1] += this.vel[1]
   }
 
 
