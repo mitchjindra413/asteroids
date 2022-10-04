@@ -38,4 +38,16 @@ Game.prototype.moveObjects = function() {
   }
 }
 
+Game.prototype.wrap = function(pos) {
+  if (pos[0] > 500) {
+    pos[0] = 0;
+  } else if (pos[1] > 500) {
+    pos[1] = 0;
+  } else if (pos[0] < 0) {
+    pos[0] = 500;
+  } else if (pos[1] < 0) {
+    pos[1] = 500;
+  }
+}
+
 module.exports = Game;
